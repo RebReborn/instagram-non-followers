@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Non-Followers Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Non-Followers Checker</h1>
+        <p class="subtitle">Find who isn't following you back (Public profiles only)</p>
+        
+        <div class="instructions">
+            <h2>How to use:</h2>
+            <ol>
+                <li>Go to your Instagram profile in a web browser</li>
+                <li>Click on <strong>Followers</strong> and wait for all to load</li>
+                <li><strong>Option 1:</strong> Press <kbd>Ctrl+A</kbd> (Windows) or <kbd>Cmd+A</kbd> (Mac) to select all, then <kbd>Ctrl+C</kbd>/<kbd>Cmd+C</kbd> to copy, and paste below</li>
+                <li><strong>Option 2:</strong> Save as text file (<kbd>Ctrl+S</kbd>/<kbd>Cmd+S</kbd>) and upload below</li>
+                <li>Repeat steps 2-4 for <strong>Following</strong></li>
+                <li>Click "Compare" to see results</li>
+            </ol>
+        </div>
+        
+        <div class="input-area">
+            <div class="input-box">
+                <h3>Followers (People who follow you)</h3>
+                <div class="input-options">
+                    <div class="option">
+                        <label for="followers-file">Upload file:</label>
+                        <input type="file" id="followers-file" accept=".txt,.text,.html">
+                    </div>
+                    <div class="option-divider">OR</div>
+                    <div class="option">
+                        <label for="followers">Paste text:</label>
+                        <textarea id="followers" placeholder="Paste your followers list here..."></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-box">
+                <h3>Following (People you follow)</h3>
+                <div class="input-options">
+                    <div class="option">
+                        <label for="following-file">Upload file:</label>
+                        <input type="file" id="following-file" accept=".txt,.text,.html">
+                    </div>
+                    <div class="option-divider">OR</div>
+                    <div class="option">
+                        <label for="following">Paste text:</label>
+                        <textarea id="following" placeholder="Paste your following list here..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button id="compare-btn" type="button">Compare</button>
+        
+        <div class="results" id="results" style="display: none;">
+            <h3>Results</h3>
+            <div class="result-counts">
+                <p>Followers: <span id="follower-count">0</span></p>
+                <p>Following: <span id="following-count">0</span></p>
+                <p>Not following back: <span id="non-followers-count">0</span></p>
+            </div>
+            
+            <div class="result-lists">
+                <div class="result-list">
+                    <h4>Not Following You Back (<span id="non-followers-count-2">0</span>)</h4>
+                    <ul id="non-followers-list"></ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <p><strong>Note:</strong> This tool works entirely in your browser. No data is sent to any server.</p>
+            <p>Works only with public Instagram profiles.</p>
+        </div>
+    </div>
+</body>
+</html>
